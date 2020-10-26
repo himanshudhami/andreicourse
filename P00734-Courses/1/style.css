@@ -1,0 +1,47 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+ }
+ 
+ .column {padding: 10px; min-height:800px;}
+ .column-left { float: left; width: 30%; border: 1px solid red; background-color: silver}
+ .column-right { float: right; width: 65%; background-color: yellow }
+ 
+ .popup-container {
+   display: none;
+   background-color: white;
+   position: absolute;
+   top: 150px;
+   left: 150px;
+   width: 500px;
+   border: 1px dashed black;
+   padding: 5px;
+   z-index:1000;
+ }
+ 
+ .popup-container-header {
+   background-color: green;
+   font-weight: bold;
+   padding: 5px;
+ }
+ 
+ .popup-container-footer {
+   background-color: orange;
+   padding: 5px;
+ }
+ 
+ .mouse-enabled {
+   cursor: pointer;
+ }
+ 
+ .li-item {
+   font-weight: bold;
+ }
+ 
+ .button {
+   background-color: silver;
+ }
+ 
+ .button-close {
+   font-weight: bold;
+ }

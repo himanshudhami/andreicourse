@@ -1,0 +1,130 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>First Page</title>
+  <meta name="description" content="first page content">
+	<meta name="author" content="Ing">
+	
+	<!-- <link rel="stylesheet" href="style.css" /> -->
+	<style>
+		body {
+			font-family: 'Courier New', Courier, monospace;
+			font-size: 14px;
+		}
+		
+		.column {padding: 10px; min-height:800px;}
+		.column-left { float: left; width: 30%; border: 1px solid red; background-color: silver}
+		.column-right { float: right; width: 65%; background-color: yellow }
+		
+		.popup-container {
+			display: none;
+			background-color: white;
+			position: absolute;
+			top: 150px;
+			left: 150px;
+			width: 500px;
+			border: 1px dashed black;
+			padding: 5px;
+			z-index:1000;
+		}
+		
+		.popup-container-header {
+			background-color: green;
+			font-weight: bold;
+			padding: 5px;
+		}
+		
+		.popup-container-footer {
+			background-color: orange;
+			padding: 5px;
+		}
+		
+		.mouse-enabled {
+			cursor: pointer;
+		}
+		
+		.li-item {
+			font-weight: bold;
+		}
+		
+		.button {
+			background-color: silver;
+		}
+		
+		.button-close {
+			font-weight: bold;
+		}
+	</style>
+  
+</head>
+
+<body onload="console.log('Body loaded')">
+
+	<div id="column-left" name="my-left-column" class="column column-left">
+		<h1>My first title as heading</h1>
+		
+		<ul>
+			<li id="li-one" class="mouse-enabled li-item" onclick="alert('hello')">My first list element</li>
+			<!-- <li id="li-one">My first list element</li> -->
+			
+			<li id="li-two" class="li-item mouse-enabled">My second list element</li>
+			
+			<li class="li-item">My third list element</li>
+			
+			<li class="li-item">
+				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions"
+				target="_blank">
+				Mozilla Functions Docs
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div id="column-right" class="column column-right">
+		<h2>Title on the right column</h2>
+	</div>
+	
+	<div id="dom-popup-container" class="popup-container">
+		<div id="popup-container-header" class="popup-container-header">
+			Popup header
+		</div>
+		<div id="popup-container-content">
+			Popup content
+		</div>
+		<div id="popup-container-footer" class="popup-container-footer">
+			Popup footer
+			<button id="btn-close" class="button button-close">Close</button>
+			
+			<button id="btn-load" class="button button-load">Load</button>
+		</div>
+	</div>
+	
+	<!-- <script src="page.js"></script> -->
+	<script>
+				//console.log(document);
+			// function popUpAlert(text) {
+			// 	let liOne = document.getElementById('li-one');
+			// 	console.log(liOne);
+			// 	liOne.onclick=function(){alert('cici')};
+			// 	liOne.click();
+			// }
+			// popUpAlert();
+			
+
+		let secondLi = document.getElementById('li-two');
+		secondLi.addEventListener('click', function() {
+			let popup = document.getElementById('dom-popup-container');
+			popup.style.display = 'block';
+			
+		})
+
+		let closeButton = document.getElementById('btn-close');
+		closeButton.addEventListener('click', () => {
+			let popup = document.getElementById('dom-popup-container');
+			popup.style.display = 'none';
+		})
+	</script>
+</body>
+</html>

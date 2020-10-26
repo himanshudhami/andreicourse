@@ -1,0 +1,31 @@
+1. create a folder where to add the course structure
+2. git clone https://INGCDaaS@dev.azure.com/INGCDaaS/IngOne/_git/P00734-Courses
+
+3. we use the "naster" branch as main branch
+4. create your own branch to experiment
+
+> git checkout naster
+> git pull
+> git checkout -b my-new-branch
+> git push
+
+continue to play in your own branch and push your experiments if you want to share them with the others.
+
+After getting the code, in the same folder where package.json file is, run:
+> npm install
+It will install the dependecies packages into a new folder: node_modules
+
+To start the webserver run:
+> npm run serve
+
+Webserver will listen to port 3333 so this port should be free.
+
+At this moment you can request pages into brower's url.
+
+Ex for page.html in folder .../2/page.html :
+http://localhost:3333/2/page.html
+
+Changes made in code are intercepted by nodemon and republished so you do not 
+have to restart the webserver after changes. Only refresh the browser.
+
+Thank you!

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+</head>
+<body class="container">
+  <header class="logo">
+    <a href="" target="_blank">
+        <img class="imgLogo" src="img/todo-logo.png" alt="Gotta have smtg to do">
+    </a>
+
+    <h2 class="headline">Gotta have something todo</h2>
+  </header>
+
+  <div class="main"> 
+    <form name="todo-items-form" id="todo-items-form">
+      <input type="text" placeholder="New Todo ...">
+      <button type="submit"><i class="fas fa-plus-square"></i></button>
+    </form>
+
+    <div class="todoList">
+      <ul>
+      </ul>
+      <a class="clearAll" id="clearAll">Clear All</a>
+    </div>
+
+  </div>
+  
+  <footer>
+    <p class="footer">Made for big effort @2020</p>
+  </footer>
+  <script type="module" src="js/app.js"></script>
+
+  <script type="module" src="js/todo-items-form/todo-items-form.controller.js"></script>
+  <script type="module" src="js/todo-item/todo-items.controller.js"></script>
+  <script type="module" src="js/todo-items-form/todo-items-form.view.js"></script>
+  <script type="module" src="js/todo-item/todo-item.template.js"></script>
+  <script type="module" src="js/todo-item/todo-item.model.js"></script>
+  <script type="module" src="js/todo-item/todo-items.repository.js"></script>
+  <script type="module" src="js/todo-item/todo-item.view.js"></script>
+  
+
+</body>
+</html>

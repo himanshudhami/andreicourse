@@ -1,0 +1,21 @@
+{
+  "name": "sandbox-webserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web.srv.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./srv/web.srv.js",
+    "serve": "nodemon ./srv/web.srv.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

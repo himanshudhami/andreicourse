@@ -1,0 +1,148 @@
+automatically clear out unused memory
+  - periodically
+  - on need bases
+
+  garbadge determination algorithms
+    Reference Counting
+    Mark and Sweep
+    
+    M&S
+      phase 1:
+        detect unreachable objects
+      phase 2:
+        reclaim the used space 
+      optional phase:
+        consolidate free space
+
+    on object creation a hidden property is created called __mark_bit__ and set to 0
+    
+    phase 1: Mark
+      Mark all reachable objects = set __mark_bit__ to 1
+      = graph traversal (depth first) where every object becomes a node and 
+      all objects reachable from this node are visited
+
+      Start at a set of objects called Root = the direct acceesible object:
+        window for browser
+        global in node
+
+    phase 2: Sweep
+      All the values set to 0 are cleared from memory and __mark_bit__ set to 0
+
+    Process restarts.
+
+    Optional phase of consolidating free space is for now not implemented.  
+
+  Advantages:
+    It handles the case with cyclic references, even in case of a cycle, 
+    this algorithm never ends up in an infinite loop.
+    There are no additional overheads incurred during the execution of the algorithm.
+
+  Disadvantages:
+    normal program execution is suspended while the garbage collection algorithm runs
+    memory fragmentation
+
+
+  The best way to optimize memory usage is to ensure that you’re keeping around only data that 
+		is necessary for the execution of your code. 
+		When data is no longer necessary, it’s best to set the value to null, freeing
+		up the reference — this is called dereferencing the value. 
+		This advice applies mostly to global values and properties of global objects. 
+		Local variables are dereferenced automatically when they go out of context.
+
+
+var r = {};// child of window
+r.myLargeObject = {
+  myArray: [...a large array]
+
+};
+r.myLargeObject.myDeepLargeObject = {
+  anotherLargeArray: [... large array]
+}
+
+var myArray = [...]
+      
+
+myDeepLargeObject.anotherLargeArray = null;// not trigger GC
+
+
+window.r.myLargeObject.myDeepLargeObject
+{
+}
+
+namespace
+com.gitlab.andrei.myProject
+
+Object.create()
+
+function Constructor() {
+  this.myProp...
+}
+Constructor.prototipe.myMethod1 = function() .....
+
+
+OO programming
+
+ES6
+export class MyNewClass {
+
+}
+
+what is an object?
+  nr of props -> state
+  nr of function to apply on the props -> methods -> behaviour
+
+Object is a container for 
+  state
+  behaviour
+
+Class ??
+  collection of methods
+  description of the object
+Object = instance of a class
+
+Class is template to create objects
+  Cookie shape -> template
+  Cookies -> objects
+
+Interface
+  set of state and behaviour to be shared over multiple classes
+  given default behaviour: cannot be abstract
+  indicated behaviour: it is abstract
+
+interface IMammal {
+  bool run(howManyKm, howFastKpH) // abstract
+}
+
+interface IHuman extends IMamal {
+  speak(); // abstract
+}
+
+// explain why a class shoul follow the interface and what are the advantages
+
+class Human implements IHuman {
+
+  constructor(name, age, gender) {
+    // state definition
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+
+  // methods
+  public spreak() {
+    console.log(blah)
+  }
+
+  bool run(howManyKm, howFastKpH) {
+    console.log(howManyKm, howFastKpH);
+  }
+
+  // other methods definition
+  // methods change the state 
+
+}
+
+let Andrei = new Human('Andrei', 50, 'male');
+let Maria = new Human('Maria', 25, 'female');
+
+Andrei and Maria are both Human => Human is the type of A & M

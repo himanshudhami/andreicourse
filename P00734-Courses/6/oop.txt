@@ -1,0 +1,71 @@
+pillars
+  Abstraction
+  Encapsulation
+  Inheritance
+  Polimorphism
+
+taxonomy:
+  base
+    mammal
+      human, cat
+
+instances 
+  = objects created within the pattern provided by a Class
+
+  explain 
+    Abstraction
+    Encapsulation
+    Inheritance
+    Polimorphism
+
+  show Runtime Class taxonomy 
+    shown in Debugger by setting breakpoint after instanciation
+
+guidelines to build taxonomies
+  solid
+    
+    Single responsibility (Separation of Concerns)
+      a software "module" should have only one reason for change
+
+      optimum function spec
+        has 1 return type always presentat
+        has no more than 3 parameters
+        has no more than 3 lines of code
+
+    Open-close 
+      -> open for extension / closed for modification
+
+    Liskov subsitution
+      -> one class must be substitutable by any of its subclasses without breaking the application
+          - subclasses behave in the same way as superclass
+          - overriden methods should not introduce adtional validation on parameters and return 
+          - subclasses enforce the same contract as the superclass
+
+    Interface segregation (Separation of Concerns)
+      -> interfaces are contracts between providers and consumers
+        providers should not oblige consumer to consume unnecessary interfaces
+          - split large interface into smaller composable interfaces
+          - interface should fit a very specific goal or task
+
+    Dependency inversion
+      -> high-level modules should not depend on low-level modules
+          both should depend ob abstractions (interfaces)
+         abstractions should not depend on details but viceversa
+
+  Separation of concerns (Dijkstra)
+    Pbbly most important principle.
+    2 Solid follow SoC
+
+    Don’t write your program as one solid block, instead, break up the code into chunks 
+    that are finalized tiny pieces of the system each able to complete a simple distinct job.
+    
+    Related with: Divide et impera.
+
+      Increases Cohesion (Measure of similarity by the set of duties, level of details, and locality)
+        Birds of a feather flock together :)
+
+      Decrease Coupling (Measure of dependence of the part on the rest of the system)
+        Dependency inversion / Abstraction / 
+
+
+
