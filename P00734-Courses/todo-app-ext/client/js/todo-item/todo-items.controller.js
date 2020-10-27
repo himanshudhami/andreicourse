@@ -16,7 +16,9 @@ export class TodoItemsController {
   /**
    * Should connect to database and get latest
    */
-  refresh = () => {
+  refreshAsync = async () => {
+    await this.#todoItemsRepository.fillAsync();
+
     this.#todoItemsRepository
       .list()
       .map((todoItemModel) => TodoItemView.renderTodo(todoItemModel));

@@ -11,6 +11,16 @@ export class BaseRoutes {
    * Call this in subclasses ctors
    */
   configRoutes = (routeSegment, modelFactory) => {
+
+    /**
+     * Get one by id
+     * GET method
+     */
+    this.router.get(routeSegment + ':id', (req, resp, next) => {
+      return this.repository.getOneById(req.params.id, (responseData) => { 
+        return this.sendResponse(resp, responseData);
+      })
+    })
     
     /**
      * Get all or list
@@ -21,16 +31,6 @@ export class BaseRoutes {
      */
     this.router.get(routeSegment + ':skip?/:take?', (req, resp, next) => {
       return this.repository.list(req.params.skip, req.params.take, (responseData) => { 
-        return this.sendResponse(resp, responseData);
-      })
-    })
-
-    /**
-     * Get one by id
-     * GET method
-     */
-    this.router.get(routeSegment + ':id', (req, resp, next) => {
-      return this.repository.getOneById(req.params.id, (responseData) => { 
         return this.sendResponse(resp, responseData);
       })
     })

@@ -25,8 +25,8 @@ export class TodoItemsFormController {
     })
   }
 
-  refresh = () => {
-    this.#todoItemsController.refresh();
+  refreshAsync = async () => {
+    await this.#todoItemsController.refreshAsync();
   }
 
   onSubmit_Form = (e) => {

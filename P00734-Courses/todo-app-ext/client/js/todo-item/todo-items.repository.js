@@ -4,13 +4,23 @@ export class TodoItemsRepository {
   #items = [];
 
   constructor() {
-    this.__fillwithMockupData();
+    //this.__fillwithMockupData();
   }
 
   __fillwithMockupData = () => {
     this.#items.push(TodoItemModel.newTodoItemModel('wash face', this));
     this.#items.push(TodoItemModel.newTodoItemModel('brush teeth', this));
     this.#items.push(TodoItemModel.newTodoItemModel('make coffee', this));
+  }
+
+  fillAsync = async () => {
+    try {
+      const payload = await fetch('http://localhost:3335/api/todos/');
+      const ret = await payload.json();
+      this.#items = ret.data;
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   newTodo = (todoItemText) => {
