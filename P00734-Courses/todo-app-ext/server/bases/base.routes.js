@@ -11,17 +11,19 @@ export class BaseRoutes {
    * Call this in subclasses ctors
    */
   configRoutes = (routeSegment, modelFactory) => {
-
+    
     /**
      * Get one by id
      * GET method
+     * 
+     * execution error
      */
     this.router.get(routeSegment + ':id', (req, resp, next) => {
       return this.repository.getOneById(req.params.id, (responseData) => { 
         return this.sendResponse(resp, responseData);
       })
     })
-    
+
     /**
      * Get all or list
      * use optional skip and take parameters for pagination

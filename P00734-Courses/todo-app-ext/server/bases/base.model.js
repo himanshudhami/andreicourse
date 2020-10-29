@@ -1,4 +1,7 @@
 export class BaseModel {
+  get modelMeta() {return {}};
+
+
   id;
   createdDate;
   changedDate;

@@ -7,9 +7,9 @@ export class TodoRoutes extends BaseRoutes {
 
   constructor() {
     super();
-    //this.#repository.createModel(); // run first time with database empty
 
     this.repository = new TodoRepository();
     this.configRoutes(this.routeSegment, TodoModelFactories);
+    this.repository.createModel(); // run first time with database empty
   }
 }

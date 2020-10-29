@@ -5,7 +5,7 @@ import { TodoRoutes } from '../todos/todo.routes.js';
 
 export class ExpressConfig {
   port = process.env.PORT || 3335;// externalize to config file
-  baseDir = process.cwd(); // externalize to config file
+  baseDir = process.cwd(); // externalize to config file // do not use __dir
   #hasConfig = false;
 
   constructor() {
